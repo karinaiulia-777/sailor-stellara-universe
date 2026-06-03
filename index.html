@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>✨ Sailor Stellaras magisches Universum ✨</title>
+  <meta name="description" content="Eine magische Welt für Sofia – Sailor Stellara, Hüterin des Sternenlichts.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- ── Animated Star Field (always visible) ─────────────── -->
+  <div id="starField"></div>
+
+  <!-- ── Welcome / Intro Screen ──────────────────────────── -->
+  <div id="welcomeScreen">
+
+    <!-- Rising Moon -->
+    <div id="moon" class="moon"></div>
+
+    <!-- Luna the Cat Messenger -->
+    <div id="catMessenger" class="cat-messenger">
+      <div class="cat-icon">🐱</div>
+      <div id="speechBubble" class="speech-bubble"></div>
+    </div>
+
+    <!-- Mission Button (shown after messages) -->
+    <button id="btnMission" class="btn-mission" style="display:none">
+      ✨ Meine Mission beginnen ✨
+    </button>
+
+  </div><!-- /welcomeScreen -->
+
+  <!-- ── Main Application ─────────────────────────────────── -->
+  <div id="mainApp">
+
+    <!-- Mobile menu button (fixed top-left) -->
+    <button class="mobile-menu-btn" id="mobileMnuBtn" style="display:none">☰</button>
+
+    <!-- Sidebar Navigation -->
+    <nav class="sidebar">
+      <div class="sidebar-header">
+        <span class="logo">🌙 Sailor Stellara</span>
+        <button class="sidebar-toggle" id="sidebarToggle">☰</button>
+      </div>
+      <ul class="nav-list">
+        <li>
+          <a href="#" class="nav-link active" data-section="stellara">
+            ⭐ Sailor Stellara
+          </a>
+        </li>
+        <li>
+          <a href="#" class="nav-link" data-section="characters">
+            💫 Charakterlexikon
+          </a>
+        </li>
+        <li>
+          <a href="#" class="nav-link" data-section="planets">
+            🪐 Planeten des Universums
+          </a>
+        </li>
+        <li>
+          <a href="#" class="nav-link" data-section="story">
+            📖 Abenteuerpfad
+          </a>
+        </li>
+        <li>
+          <a href="#" class="nav-link" data-section="music">
+            🎵 Musikzimmer
+          </a>
+        </li>
+        <li>
+          <a href="#" class="nav-link" data-section="japanese">
+            🌸 Japanisch lernen
+          </a>
+        </li>
+        <li>
+          <a href="#" class="nav-link" data-section="pegasus">
+            🦄 Pegasus Traumwelt
+          </a>
+        </li>
+        <li>
+          <a href="#" class="nav-link" data-section="gallery">
+            🎨 Kunstgalerie
+          </a>
+        </li>
+        <li>
+          <a href="#" class="nav-link" data-section="diary">
+            📔 Mondtagebuch
+          </a>
+        </li>
+        <li>
+          <a href="#" class="nav-link" data-section="achievements">
+            🏆 Auszeichnungen
+          </a>
+        </li>
+        <!-- Birthday link: hidden until 3 achievements unlocked -->
+        <li>
+          <a href="#" class="nav-link secret-link" data-section="birthday"
+             id="birthdayNavLink" style="display:none">
+            🎂 Geburtstagsüberraschung
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Mobile sidebar overlay -->
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+
+      <section id="section-stellara"    class="section active"></section>
+      <section id="section-characters"  class="section"></section>
+      <section id="section-planets"     class="section"></section>
+      <section id="section-story"       class="section"></section>
+      <section id="section-music"       class="section"></section>
+      <section id="section-japanese"    class="section"></section>
+      <section id="section-pegasus"     class="section"></section>
+      <section id="section-gallery"     class="section"></section>
+      <section id="section-diary"       class="section"></section>
+      <section id="section-achievements" class="section"></section>
+      <section id="section-birthday"    class="section"></section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer" id="siteFooter" style="display:none">
+      🌙 Dies ist eine private, nicht-kommerzielle Fan-Geburtstagsseite.
+      Sie nutzt keine offiziellen Bilder oder vollständigen Liedtexte. 🌙
+    </footer>
+
+  </div><!-- /mainApp -->
+
+  <!-- Achievement Toast Notification -->
+  <div class="achievement-toast" id="achievementToast"></div>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+
+  <!-- Show mobile menu button on small screens -->
+  <script>
+    (function() {
+      function checkMobile() {
+        const btn = document.getElementById('mobileMnuBtn');
+        if (btn) btn.style.display = window.innerWidth <= 768 ? 'flex' : 'none';
+      }
+      window.addEventListener('resize', checkMobile);
+      window.addEventListener('load', checkMobile);
+    })();
+  </script>
+
+</body>
+</html>

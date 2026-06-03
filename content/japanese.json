@@ -1,0 +1,272 @@
+[
+  {
+    "id": 1,
+    "japanese": "こんにちは",
+    "romaji": "Konnichiwa",
+    "german": "Guten Tag / Hallo",
+    "pronunciationHint": "Kon-ni-chi-wa",
+    "category": "Begrüßung",
+    "emoji": "👋"
+  },
+  {
+    "id": 2,
+    "japanese": "おはよう",
+    "romaji": "Ohayou",
+    "german": "Guten Morgen",
+    "pronunciationHint": "O-ha-yo",
+    "category": "Begrüßung",
+    "emoji": "🌅"
+  },
+  {
+    "id": 3,
+    "japanese": "こんばんは",
+    "romaji": "Konbanwa",
+    "german": "Guten Abend",
+    "pronunciationHint": "Kon-ban-wa",
+    "category": "Begrüßung",
+    "emoji": "🌙"
+  },
+  {
+    "id": 4,
+    "japanese": "ありがとう",
+    "romaji": "Arigatou",
+    "german": "Danke",
+    "pronunciationHint": "A-ri-ga-to",
+    "category": "Begrüßung",
+    "emoji": "🙏"
+  },
+  {
+    "id": 5,
+    "japanese": "さようなら",
+    "romaji": "Sayounara",
+    "german": "Auf Wiedersehen",
+    "pronunciationHint": "Sa-yo-na-ra",
+    "category": "Begrüßung",
+    "emoji": "👋"
+  },
+  {
+    "id": 6,
+    "japanese": "月",
+    "romaji": "Tsuki",
+    "german": "Mond",
+    "pronunciationHint": "Tsu-ki",
+    "category": "Mond",
+    "emoji": "🌙"
+  },
+  {
+    "id": 7,
+    "japanese": "星",
+    "romaji": "Hoshi",
+    "german": "Stern",
+    "pronunciationHint": "Ho-shi",
+    "category": "Mond",
+    "emoji": "⭐"
+  },
+  {
+    "id": 8,
+    "japanese": "空",
+    "romaji": "Sora",
+    "german": "Himmel",
+    "pronunciationHint": "So-ra",
+    "category": "Mond",
+    "emoji": "🌌"
+  },
+  {
+    "id": 9,
+    "japanese": "夜",
+    "romaji": "Yoru",
+    "german": "Nacht",
+    "pronunciationHint": "Yo-ru",
+    "category": "Mond",
+    "emoji": "🌃"
+  },
+  {
+    "id": 10,
+    "japanese": "光",
+    "romaji": "Hikari",
+    "german": "Licht",
+    "pronunciationHint": "Hi-ka-ri",
+    "category": "Mond",
+    "emoji": "✨"
+  },
+  {
+    "id": 11,
+    "japanese": "友達",
+    "romaji": "Tomodachi",
+    "german": "Freundin",
+    "pronunciationHint": "To-mo-da-chi",
+    "category": "Freundschaft",
+    "emoji": "👫"
+  },
+  {
+    "id": 12,
+    "japanese": "愛",
+    "romaji": "Ai",
+    "german": "Liebe",
+    "pronunciationHint": "A-i",
+    "category": "Freundschaft",
+    "emoji": "💖"
+  },
+  {
+    "id": 13,
+    "japanese": "心",
+    "romaji": "Kokoro",
+    "german": "Herz / Seele",
+    "pronunciationHint": "Ko-ko-ro",
+    "category": "Freundschaft",
+    "emoji": "💜"
+  },
+  {
+    "id": 14,
+    "japanese": "仲間",
+    "romaji": "Nakama",
+    "german": "Gefährtin / Team",
+    "pronunciationHint": "Na-ka-ma",
+    "category": "Freundschaft",
+    "emoji": "🤝"
+  },
+  {
+    "id": 15,
+    "japanese": "笑顔",
+    "romaji": "Egao",
+    "german": "Lächeln",
+    "pronunciationHint": "E-ga-o",
+    "category": "Freundschaft",
+    "emoji": "😊"
+  },
+  {
+    "id": 16,
+    "japanese": "勇気",
+    "romaji": "Yuuki",
+    "german": "Mut",
+    "pronunciationHint": "Yu-u-ki",
+    "category": "Mut",
+    "emoji": "💪"
+  },
+  {
+    "id": 17,
+    "japanese": "力",
+    "romaji": "Chikara",
+    "german": "Kraft",
+    "pronunciationHint": "Chi-ka-ra",
+    "category": "Mut",
+    "emoji": "⚡"
+  },
+  {
+    "id": 18,
+    "japanese": "希望",
+    "romaji": "Kibou",
+    "german": "Hoffnung",
+    "pronunciationHint": "Ki-bo-u",
+    "category": "Mut",
+    "emoji": "🌟"
+  },
+  {
+    "id": 19,
+    "japanese": "夢",
+    "romaji": "Yume",
+    "german": "Traum",
+    "pronunciationHint": "Yu-me",
+    "category": "Mut",
+    "emoji": "💫"
+  },
+  {
+    "id": 20,
+    "japanese": "強い",
+    "romaji": "Tsuyoi",
+    "german": "Stark",
+    "pronunciationHint": "Tsu-yo-i",
+    "category": "Mut",
+    "emoji": "🦁"
+  },
+  {
+    "id": 21,
+    "japanese": "魔法",
+    "romaji": "Mahou",
+    "german": "Magie / Zauberei",
+    "pronunciationHint": "Ma-ho-u",
+    "category": "Magie",
+    "emoji": "🔮"
+  },
+  {
+    "id": 22,
+    "japanese": "変身",
+    "romaji": "Henshin",
+    "german": "Verwandlung",
+    "pronunciationHint": "Hen-shin",
+    "category": "Magie",
+    "emoji": "✨"
+  },
+  {
+    "id": 23,
+    "japanese": "水晶",
+    "romaji": "Suishou",
+    "german": "Kristall",
+    "pronunciationHint": "Su-i-sho-u",
+    "category": "Magie",
+    "emoji": "💎"
+  },
+  {
+    "id": 24,
+    "japanese": "妖精",
+    "romaji": "Yousei",
+    "german": "Fee / Elfe",
+    "pronunciationHint": "Yo-u-se-i",
+    "category": "Magie",
+    "emoji": "🧚"
+  },
+  {
+    "id": 25,
+    "japanese": "宝石",
+    "romaji": "Houseki",
+    "german": "Edelstein",
+    "pronunciationHint": "Ho-u-se-ki",
+    "category": "Magie",
+    "emoji": "💍"
+  },
+  {
+    "id": 26,
+    "japanese": "歌",
+    "romaji": "Uta",
+    "german": "Lied / Gesang",
+    "pronunciationHint": "U-ta",
+    "category": "Musik",
+    "emoji": "🎵"
+  },
+  {
+    "id": 27,
+    "japanese": "音楽",
+    "romaji": "Ongaku",
+    "german": "Musik",
+    "pronunciationHint": "On-ga-ku",
+    "category": "Musik",
+    "emoji": "🎶"
+  },
+  {
+    "id": 28,
+    "japanese": "歌う",
+    "romaji": "Utau",
+    "german": "Singen",
+    "pronunciationHint": "U-ta-u",
+    "category": "Musik",
+    "emoji": "🎤"
+  },
+  {
+    "id": 29,
+    "japanese": "踊る",
+    "romaji": "Odoru",
+    "german": "Tanzen",
+    "pronunciationHint": "O-do-ru",
+    "category": "Musik",
+    "emoji": "💃"
+  },
+  {
+    "id": 30,
+    "japanese": "メロディー",
+    "romaji": "Merodii",
+    "german": "Melodie",
+    "pronunciationHint": "Me-ro-di-i",
+    "category": "Musik",
+    "emoji": "🎼"
+  }
+]

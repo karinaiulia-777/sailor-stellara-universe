@@ -1,0 +1,98 @@
+[
+  {
+    "id": "moonlight-densetsu",
+    "title": "Moonlight Densetsu",
+    "titleJapanese": "ムーンライト伝説",
+    "singer": "DALI (später Moon Lips)",
+    "season": "Staffel 1 & R",
+    "type": "Titelmelodie",
+    "description": "Das bekannteste Lied aus Sailor Moon! Diese wunderschöne Melodie erklingt am Anfang jeder Folge und hat Millionen von Kindern auf der Welt begeistert.",
+    "youtubeSearchHint": "Moonlight Densetsu Sailor Moon opening",
+    "safeExcerpt": {
+      "japanese": "ムーンライト伝説",
+      "romaji": "Moonlight densetsu",
+      "german": "Mondlicht-Legende",
+      "pronunciationHint": "Muun-lai-to den-se-tsu"
+    }
+  },
+  {
+    "id": "otome-no-policy",
+    "title": "Otome no Policy",
+    "titleJapanese": "乙女のポリシー",
+    "singer": "Yoko Ishida",
+    "season": "Staffel 1 & R",
+    "type": "Abspann",
+    "description": "Ein fröhliches und ermutigendes Abspannlied! Es singt davon, stark zu sein und sich selbst treu zu bleiben – genau wie eine echte Sailor-Kriegerin.",
+    "youtubeSearchHint": "Otome no Policy Sailor Moon ending",
+    "safeExcerpt": {
+      "japanese": "乙女のポリシー",
+      "romaji": "Otome no porishi",
+      "german": "Die Prinzipien eines Mädchens",
+      "pronunciationHint": "O-to-me no po-ri-shi"
+    }
+  },
+  {
+    "id": "heart-moving",
+    "title": "Heart Moving",
+    "titleJapanese": "ハート・ムービング",
+    "singer": "Ushiroyubi Sasaregumi",
+    "season": "Staffel 1",
+    "type": "Abspann",
+    "description": "Das erste Abspannlied der Serie – verspielt und voller Energie! Es passt perfekt zu Usagis fröhlicher Persönlichkeit.",
+    "youtubeSearchHint": "Heart Moving Sailor Moon ending season 1",
+    "safeExcerpt": {
+      "japanese": "ハート・ムービング",
+      "romaji": "Haato muubingu",
+      "german": "Das Herz bewegen",
+      "pronunciationHint": "Ha-a-to mu-u-bin-gu"
+    }
+  },
+  {
+    "id": "tuxedo-mirage",
+    "title": "Tuxedo Mirage",
+    "titleJapanese": "タキシード・ミラージュ",
+    "singer": "Peach Hips",
+    "season": "Sailor Moon S",
+    "type": "Abspann",
+    "description": "Ein magisches, träumerisches Lied – passend zu Sailor Moon S. Es klingt wie ein Mondlicht-Traum und ist sehr besonders.",
+    "youtubeSearchHint": "Tuxedo Mirage Sailor Moon S ending",
+    "safeExcerpt": {
+      "japanese": "タキシード・ミラージュ",
+      "romaji": "Takushiido miraaju",
+      "german": "Smoking-Fata Morgana",
+      "pronunciationHint": "Ta-ku-shi-do mi-ra-ju"
+    }
+  },
+  {
+    "id": "princess-moon",
+    "title": "Princess Moon",
+    "titleJapanese": "プリンセス・ムーン",
+    "singer": "Yoko Ishida",
+    "season": "Sailor Moon R",
+    "type": "Abspann",
+    "description": "Ein romantisches Abspannlied von Sailor Moon R. Es handelt von der Mondprinzessin und ihrer ewigen Liebe – sehr schön und bewegend!",
+    "youtubeSearchHint": "Princess Moon Sailor Moon R ending",
+    "safeExcerpt": {
+      "japanese": "プリンセス・ムーン",
+      "romaji": "Purinsesu Muun",
+      "german": "Mondprinzessin",
+      "pronunciationHint": "Pu-rin-se-su Mu-un"
+    }
+  },
+  {
+    "id": "yume-wo-yumete",
+    "title": "Watashi-tachi ni Naritakute",
+    "titleJapanese": "私たちになりたくて",
+    "singer": "Peach Hips",
+    "season": "Sailor Moon SuperS",
+    "type": "Abspann",
+    "description": "Das Abspannlied von Sailor Moon SuperS – voller Hoffnung und Träume! Es singt davon, das zu werden, was man sein möchte. Perfekt für Chibiusa und Pegasus!",
+    "youtubeSearchHint": "Watashi tachi ni Naritakute Sailor Moon SuperS",
+    "safeExcerpt": {
+      "japanese": "私たちになりたくて",
+      "romaji": "Watashitachi ni naritakute",
+      "german": "Wir wollen so werden wie wir sind",
+      "pronunciationHint": "Wa-ta-shi-ta-chi ni na-ri-ta-ku-te"
+    }
+  }
+]

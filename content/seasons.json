@@ -1,0 +1,54 @@
+[
+  {
+    "id": "season1",
+    "title": "Sailor Moon – Die erste Staffel",
+    "subtitle": "Der Beginn eines Abenteuers",
+    "emoji": "🌙",
+    "color": "#7e57c2",
+    "colorLight": "#b39ddb",
+    "shortSummary": "Alles beginnt, als das Mädchen Usagi Tsukino von der schwarzen Katze Luna aufgeweckt wird. Luna erklärt ihr, dass sie Sailor Moon ist – eine mächtige Kriegerin, die die Welt beschützen muss. Zusammen mit ihren Freundinnen kämpft sie gegen das Dunkle Königreich, das nach dem mächtigen Silberkristall sucht.",
+    "newFriends": ["Sailor Mercury – die kluge Ami", "Sailor Mars – die feurige Rei", "Sailor Jupiter – die starke Makoto", "Sailor Venus – die lebhafte Minako", "Tuxedo Mask – der geheimnisvolle Beschützer"],
+    "mainChallenge": "Das Dunkle Königreich unter der bösen Königin Beryl sucht den Silberkristall und will die Erde mit Dunkelheit erfüllen.",
+    "lesson": "Wahre Freundschaft gibt dir Mut – auch in den schwierigsten Momenten.",
+    "magicalMoment": "Usagi verwandelt sich zum ersten Mal in Sailor Moon und rettet ihren kleinen Bruder!"
+  },
+  {
+    "id": "seasonR",
+    "title": "Sailor Moon R – Die Rückkehr",
+    "subtitle": "Freunde aus der Zukunft",
+    "emoji": "🌸",
+    "color": "#e91e8c",
+    "colorLight": "#f48fb1",
+    "shortSummary": "Nach einer kurzen Pause kehren die Sailor-Kriegerinnen zurück! Ein kleines Mädchen mit pinkfarbenen Haaren fällt buchstäblich vom Himmel auf Usagi. Sie nennt sich Chibiusa und hält sie für ihre Mama – aber das kann doch nicht stimmen, oder? Feinde aus der Zukunft bedrohen die Erde und Chibiusa hütet ein riesiges Geheimnis.",
+    "newFriends": ["Chibiusa – das mutige kleine Mädchen aus der Zukunft", "Sailor Pluto – die geheimnisvolle Hüterin der Zeit"],
+    "mainChallenge": "Die Schwarz-Mond-Familie aus der Zukunft sucht nach Chibiusa und dem Rosa Mondkristall.",
+    "lesson": "Die Zukunft ist nicht festgelegt – durch unsere Handlungen heute können wir sie verändern.",
+    "magicalMoment": "Chibiusa hält endlich ihr Rosa Mondkristall in den Händen und zeigt ihre wahre Stärke!"
+  },
+  {
+    "id": "seasonS",
+    "title": "Sailor Moon S – Das Herz der Erde",
+    "subtitle": "Neue Kriegerinnen, neue Geheimnisse",
+    "emoji": "💜",
+    "color": "#00838f",
+    "colorLight": "#80deea",
+    "shortSummary": "Neue Feinde suchen nach drei reinen Herzen, die sie für einen bösen Zauber brauchen. Und plötzlich tauchen neue Sailor-Kriegerinnen auf – aber sind sie Freundinnen oder Feindinnen? Sailor Uranus und Sailor Neptune kämpfen auf ihre eigene Art und stellen die Freundschaft der Gruppe auf eine große Probe.",
+    "newFriends": ["Sailor Uranus – die starke und unabhängige Haruka", "Sailor Neptune – die elegante und weise Michiru", "Sailor Chibi Moon – Chibiusa zeigt ihre Kräfte!"],
+    "mainChallenge": "Die Death Busters wollen drei reine Herzen stehlen, um eine dunkle Gottheit zu erwecken.",
+    "lesson": "Manchmal gibt es sehr schwierige Entscheidungen – aber das Herz weiß immer den richtigen Weg.",
+    "magicalMoment": "Chibiusa wird zur Sailor Chibi Moon und kämpft Seite an Seite mit Usagi!"
+  },
+  {
+    "id": "seasonSuperS",
+    "title": "Sailor Moon SuperS – Der Zirkus der Träume",
+    "subtitle": "Pegasus und der Zirkus der Finsternis",
+    "emoji": "🌟",
+    "color": "#f57c00",
+    "colorLight": "#ffcc80",
+    "shortSummary": "Ein weißes Pferd mit Flügeln und einem goldenen Horn erscheint in Chibiusas Träumen. Er heißt Pegasus und hütet das Traumreich Elyon. Doch der gefährliche Dead Moon Circus bedroht alle schönen Träume auf der Welt. Chibiusa und Usagi erleben ihre größten und aufregendsten Abenteuer – und Chibiusa beweist, dass auch kleine Mädchen große Heldinnen sein können!",
+    "newFriends": ["Pegasus / Helios – der Hüter der Träume", "Die Amazoness-Quartet – vier Mädchen, die am Ende ihre wahren Herzen finden"],
+    "mainChallenge": "Königin Neherenia und der Dead Moon Circus wollen alle Träume der Welt stehlen.",
+    "lesson": "Gib niemals deine Träume auf – sie machen dich zu dem, was du bist.",
+    "magicalMoment": "Pegasus gibt Sailor Moon und Sailor Chibi Moon neue Kräfte – zusammen sind sie unbesiegbar!"
+  }
+]
