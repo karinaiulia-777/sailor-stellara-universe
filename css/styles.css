@@ -1699,33 +1699,21 @@ input, textarea { font-family: var(--font-main); }
   background: linear-gradient(135deg, rgba(255, 215, 0, 0.08), rgba(179, 157, 219, 0.07));
   border: 1px solid rgba(255, 215, 0, 0.25);
   border-radius: var(--radius-card);
-  padding: 22px 24px;
+  padding: 16px;
   margin-bottom: 28px;
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  gap: 18px;
-  align-items: center;
-}
-
-.backup-title {
-  font-size: 1.1rem;
-  font-weight: 800;
-  color: var(--gold);
-  font-family: var(--font-head);
-  margin-bottom: 5px;
-}
-
-.backup-text {
-  color: var(--text-soft);
-  font-size: 0.88rem;
-  line-height: 1.55;
 }
 
 .backup-actions {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  justify-content: flex-end;
+  justify-content: center;
+}
+
+.backup-actions .btn {
+  flex: 1 1 190px;
+  justify-content: center;
+  min-height: 46px;
 }
 
 #backupFileInput { display: none; }
@@ -2018,8 +2006,6 @@ input, textarea { font-family: var(--font-main); }
   .quiz-options { grid-template-columns: 1fr; }
   .profile-save-row { grid-template-columns: 1fr; }
   .saved-profile-header { flex-direction: column; }
-  .backup-panel { grid-template-columns: 1fr; }
-  .backup-actions { justify-content: flex-start; }
 
   .mobile-menu-btn {
     display: flex;

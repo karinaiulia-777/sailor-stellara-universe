@@ -980,19 +980,8 @@ function renderDiary() {
 }
 
 function backupPanel() {
-  const lastBackupDate = localStorage.getItem('stellara_lastBackupDate') || '—';
-  const backupStatus = lastBackupDate !== '—' ? `Letzte Auto-Sicherung: ${lastBackupDate}` : 'Noch keine Auto-Sicherung';
-  
   return `
     <div class="backup-panel">
-      <div>
-        <div class="backup-title">💾 Sichern &amp; Wiederherstellen</div>
-        <p class="backup-text">
-          ✨ Deine Einträge werden <strong>automatisch täglich</strong> gespeichert!<br>
-          ${backupStatus}<br><br>
-          Du kannst auch manuell Profile, Tagebuch und Galerie sichern oder ein Backup wiederherstellen.
-        </p>
-      </div>
       <div class="backup-actions">
         <button class="btn btn-gold" onclick="exportData()">⬇️ Manuell Sichern</button>
         <button class="btn btn-silver" onclick="triggerImportData()">⬆️ Backup Laden</button>
