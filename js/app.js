@@ -1099,7 +1099,7 @@ function triggerImportData() {
 function importData(file) {
   if (!file) return;
   const input = document.getElementById('backupFileInput');
-  const ok = confirm('Dieses Backup wird mit den vorhandenen Daten zusammengeführt. Doppelte IDs werden übersprungen. Fortfahren?');
+  const ok = confirm('Diese Datei wird mit den vorhandenen Daten zusammengeführt. Doppelte IDs werden übersprungen. Fortfahren?');
   if (!ok) {
     if (input) input.value = '';
     return;
@@ -1109,13 +1109,8 @@ function importData(file) {
   reader.onload = e => {
     try {
       const bundle = JSON.parse(e.target.result);
-      if (bundle?.app !== 'sailor-stellara' || bundle?.version !== 1) {
-        throw new Error('invalid bundle');
-      }
-
-      const profiles = Array.isArray(bundle.profiles) ? bundle.profiles : [];
-      const diary = Array.isArray(bundle.diary) ? bundle.diary : [];
-      const gallery = Array.isArray(bundle.gallery) ? bundle.gallery : [];
+      const importBundle = normalizeImportBundle(bundle);
+      const { profiles, diary, gallery } = importBundle;
 
       const oldProfiles = STATE.profiles;
       const oldDiary = STATE.diary;
@@ -1140,9 +1135,10 @@ function importData(file) {
       }
 
       renderSection(STATE.currentSection);
-      alert(`Backup wiederhergestellt! Neu hinzugefügt: ${mergedProfiles.added} Profile, ${mergedDiary.added} Tagebucheinträge, ${mergedGallery.added} Galerie-Bilder. Doppelte IDs wurden übersprungen.`);
+      const label = importBundle.type === 'diary-only' ? 'Tagebuch-Datei importiert' : 'Backup wiederhergestellt';
+      alert(`${label}! Neu hinzugefügt: ${mergedProfiles.added} Profile, ${mergedDiary.added} Tagebucheinträge, ${mergedGallery.added} Galerie-Bilder. Doppelte IDs wurden übersprungen.`);
     } catch (err) {
-      alert('Diese Backup-Datei konnte nicht gelesen werden. Es wurde nichts verändert. 🌙');
+      alert('Diese Datei konnte nicht gelesen werden. Es wurde nichts verändert. 🌙');
     } finally {
       if (input) input.value = '';
     }
@@ -1152,6 +1148,57 @@ function importData(file) {
     if (input) input.value = '';
   };
   reader.readAsText(file);
+}
+
+function normalizeImportBundle(data) {
+  if (data?.app === 'sailor-stellara' && data?.version === 1) {
+    return {
+      type: 'full-backup',
+      profiles: Array.isArray(data.profiles) ? data.profiles : [],
+      diary: Array.isArray(data.diary) ? data.diary : [],
+      gallery: Array.isArray(data.gallery) ? data.gallery : []
+    };
+  }
+
+  if (data?.app !== undefined || data?.version !== undefined) {
+    throw new Error('invalid bundle');
+  }
+
+  if (Array.isArray(data)) {
+    return {
+      type: 'diary-only',
+      profiles: [],
+      diary: data.filter(isDiaryEntry),
+      gallery: []
+    };
+  }
+
+  if (Array.isArray(data?.diary)) {
+    return {
+      type: 'diary-only',
+      profiles: [],
+      diary: data.diary.filter(isDiaryEntry),
+      gallery: []
+    };
+  }
+
+  if (isDiaryEntry(data)) {
+    return {
+      type: 'diary-only',
+      profiles: [],
+      diary: [data],
+      gallery: []
+    };
+  }
+
+  throw new Error('invalid import data');
+}
+
+function isDiaryEntry(item) {
+  if (!item || typeof item !== 'object' || Array.isArray(item)) return false;
+  if (item.id === undefined || item.id === null) return false;
+  const diaryFields = ['date', 'learn', 'watch', 'feel', 'char', 'extra', 'savedAt'];
+  return diaryFields.some(field => typeof item[field] === 'string' && item[field].trim() !== '');
 }
 
 function mergeById(target, incoming) {
