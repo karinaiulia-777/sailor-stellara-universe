@@ -1,0 +1,14 @@
+# ─── Private diary content — MUST NEVER be published ───────────────
+# Sofia's personal diary entries are private. They must not be committed
+# to this public GitHub Pages repository. See PRDs/PRD_Diary_Privacy_CrossDevice.md.
+diary_entries/*.json
+archive/diary_entries_archive/
+sailor-stellara-autosave-*.json
+sailor-stellara-backup-*.json
+*autosave*.json
+
+# ─── OS / editor noise ─────────────────────────────────────────────
+.DS_Store
+**/.DS_Store
+Thumbs.db
+*.swp

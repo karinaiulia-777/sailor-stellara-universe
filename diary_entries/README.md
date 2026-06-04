@@ -1,13 +1,22 @@
-# 📔 Mondtagebuch Einträge
+# 📔 Mondtagebuch — Hinweis zur Privatsphäre
 
-Alle Tagebucheinträge von Sofia werden hier gespeichert.
+> ## ⚠️ Dieser Ordner darf KEINE echten Tagebucheinträge enthalten
+>
+> Dieses Projekt wird über **GitHub Pages öffentlich** veröffentlicht. Alles, was
+> hier liegt und committet wird, ist **für jeden im Internet sichtbar**.
+>
+> Sofias Tagebucheinträge sind **privat** und gehören **nicht** in dieses Repository.
+> Eine `.gitignore` ignoriert deshalb alle `*.json`-Dateien in diesem Ordner.
 
-## Dateien
+## Wo werden Einträge gespeichert?
 
-Jede Datei ist ein einzelner Tagebucheintrag im JSON-Format mit folgendem Namen:
-- `YYYY-MM-DD_Eintrag.json`
+- **Heute:** Im Browser (`localStorage`) auf dem jeweiligen Gerät. Backups werden als
+  JSON heruntergeladen und sollten in einem **privaten Ordner außerhalb des Repos**
+  aufbewahrt werden, z. B. `Sailor_Moon/sailor-stellara-private-diary-backup/`.
+- **Geplant:** Eine private, geräteübergreifende Lösung (iPad ↔ Mac) mit echtem
+  Backend-Schutz. Details: `PRDs/PRD_Diary_Privacy_CrossDevice.md`.
 
-## Inhalt jeder Datei
+## Format eines Eintrags (Referenz)
 
 ```json
 {
@@ -16,7 +25,7 @@ Jede Datei ist ein einzelner Tagebucheintrag im JSON-Format mit folgendem Namen:
   "learn": "Was ich gelernt habe",
   "watch": "Was ich geschaut habe",
   "feel": "Wie ich mich fühle",
-  "char": "Liebingscharakter",
+  "char": "Lieblingscharakter",
   "extra": "Weitere Gedanken",
   "savedAt": "Zeitstempel"
 }
@@ -24,4 +33,5 @@ Jede Datei ist ein einzelner Tagebucheintrag im JSON-Format mit folgendem Namen:
 
 ## Wiederherstellung
 
-Falls die Einträge im Browser verloren gehen, können Sie alle Dateien aus diesem Ordner kombinieren und in die App importieren.
+Backup-Dateien aus dem **privaten** Backup-Ordner können über **Backup Laden / Import**
+im Mondtagebuch wieder eingespielt werden. Einträge **nicht** in diesen Repo-Ordner kopieren.

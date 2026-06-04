@@ -86,15 +86,28 @@ Das Mondtagebuch, die Kunstgalerie und gespeicherte Sailor-Stellara-Profile werd
 - **Löschen:** Browsereinstellungen → Websitedaten löschen → `index.html`-Herkunft
 - **Backup:** Im Mondtagebuch gibt es **Sichern (Export)** und **Wiederherstellen (Import)**. Der Export lädt eine JSON-Datei mit Profilen, Tagebuch und Galerie herunter. Beim Import werden vorhandene Daten zusammengeführt; doppelte IDs werden übersprungen.
 - **Automatische Downloads:** Sobald ein Tagebucheintrag gespeichert wird, erzeugt das System automatisch eine Backup-Datei in deinem **Downloads**-Ordner.
-- **Manuelle Archivierung:** Wenn du die Datei in deinem Projekt behalten möchtest, verschiebe sie nach dem Download selbst in den Ordner `diary_entries/`.
 
-### Manuelles Backup-Verfahren
+### ⚠️ WICHTIG: Tagebuch-Backups gehören NICHT in dieses Repository
+
+Dieses Projekt wird über **GitHub Pages öffentlich** veröffentlicht. Alles, was in diesem
+Ordner liegt und committet wird, ist **für jeden im Internet sichtbar**.
+
+Sofias Tagebucheinträge sind **privat**. Lege Backup-Dateien (`sailor-stellara-autosave-*.json`,
+`sailor-stellara-backup-*.json`) deshalb **niemals** in diesem Projektordner ab und committe sie nicht.
+
+- Eine `.gitignore` schützt den Ordner `diary_entries/` und alle Backup-Dateien zusätzlich automatisch.
+- Bewahre Tagebuch-Backups an einem **privaten** Ort außerhalb des Repositorys auf, z. B.:
+  `Sailor_Moon/sailor-stellara-private-diary-backup/`
+- Die langfristige Lösung (private, geräteübergreifende Synchronisation) ist in
+  `PRDs/PRD_Diary_Privacy_CrossDevice.md` beschrieben.
+
+### Manuelles Backup-Verfahren (privat aufbewahren)
 
 1. Schreibe und speichere den Eintrag im Mondtagebuch.
 2. Der Browser lädt automatisch eine Datei mit Namen `sailor-stellara-autosave-YYYY-MM-DD.json` herunter.
 3. Öffne deinen **Downloads**-Ordner.
-4. Verschiebe die Datei in `sailor-stellara-universe/diary_entries/`.
-5. Die Datei steht dann dauerhaft in deinem Projekt bereit.
+4. Verschiebe die Datei in deinen **privaten** Backup-Ordner *außerhalb* dieses Repositorys
+   (z. B. `Sailor_Moon/sailor-stellara-private-diary-backup/`) — **nicht** nach `diary_entries/`.
 
 ---
 

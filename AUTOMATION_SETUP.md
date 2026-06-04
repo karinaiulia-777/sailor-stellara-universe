@@ -1,6 +1,24 @@
 # 📁 Diary Entry Auto-Move Setup
 
-This guide helps you automatically move diary backup files from Downloads to the `diary_entries/` folder.
+> ## ⚠️ PRIVACY WARNING — READ FIRST
+>
+> This project is published publicly via **GitHub Pages**. **Never** move diary
+> backup files into this repository (the `diary_entries/` folder or anywhere else
+> under the project). Anything committed here becomes **visible to everyone on the
+> internet**, and Sofia's diary is **private**.
+>
+> - A `.gitignore` now protects `diary_entries/` and all backup files automatically.
+> - Diary backups must be moved to a **private folder outside this repository**, e.g.
+>   `Sailor_Moon/sailor-stellara-private-diary-backup/`.
+> - This auto-move setup is therefore **optional and superseded**. The real fix —
+>   a private, cross-device diary backend — is described in
+>   `PRDs/PRD_Diary_Privacy_CrossDevice.md`. Prefer that over this script.
+>
+> The instructions below have been updated to target a **private folder outside the
+> repo**. Do **not** change the destination back to `diary_entries/`.
+
+This guide helps you automatically move diary backup files from Downloads to a
+**private** folder outside this public repository.
 
 ## ⚠️ Important: macOS Full Disk Access Permission
 
@@ -75,19 +93,20 @@ This runs the script **every day at 9 AM** and logs output to `/tmp/diary-move.l
 1. Sofia saves diary entries in the Sailor Stellara app
 2. Browser auto-downloads backup files to Downloads folder (named `sailor-stellara-autosave-YYYY-MM-DD.json`)
 3. Automation script runs (daily or on demand)
-4. Files are automatically moved to `diary_entries/` folder
-5. ✨ All entries are permanently saved in your project!
+4. Files are automatically moved to the **private** backup folder *outside* the repo
+   (`Sailor_Moon/sailor-stellara-private-diary-backup/`)
+5. ✨ All entries are safely backed up — privately, never published.
 
 ---
 
 ## Verify It's Working
 
-Check the `diary_entries/` folder:
+Check the **private** backup folder (outside the repo):
 ```bash
-ls /Users/Carina/Documents/Sofias_Welt_Alles/Sailor_Moon/sailor-stellara-universe/diary_entries/
+ls /Users/Carina/Documents/Sofias_Welt_Alles/Sailor_Moon/sailor-stellara-private-diary-backup/
 ```
 
-You should see your diary files organized by date.
+You should see your diary files organized by date — safely outside the public repository.
 
 ---
 

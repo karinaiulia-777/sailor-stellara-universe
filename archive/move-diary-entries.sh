@@ -6,7 +6,11 @@
 # This script moves diary backup files from Downloads to diary_entries folder
 
 DOWNLOADS="$HOME/Downloads"
-DIARY_FOLDER="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/diary_entries"
+# IMPORTANT: diary backups are PRIVATE and must NOT live inside this public
+# GitHub Pages repository. Destination is a private folder OUTSIDE the repo.
+# (Repo root is .../sailor-stellara-universe-public; we target a sibling folder.)
+REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+DIARY_FOLDER="$(dirname "$REPO_ROOT")/sailor-stellara-private-diary-backup"
 PATTERN="sailor-stellara-autosave-*.json"
 
 # Create diary_entries folder if it doesn't exist
