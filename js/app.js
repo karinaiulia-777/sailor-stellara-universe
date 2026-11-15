@@ -29,6 +29,78 @@ document.addEventListener('DOMContentLoaded', () => {
   runWelcomeAnimation();
 });
 
+// ─── Event delegation (no inline handlers that carry data) ───
+document.addEventListener('click', ev => {
+  const el = ev.target.closest('[data-action]');
+  if (!el) return;
+  const { action, id, category, selected, correct } = el.dataset;
+  switch (action) {
+    case 'delete-profile':  deleteProfile(id); break;
+    case 'delete-gallery':  deleteGalleryItem(id); break;
+    case 'delete-diary':    deleteDiaryEntry(id); break;
+    case 'select-category': selectJapaneseCategory(category); break;
+    case 'check-answer':    checkAnswer(el, selected, correct); break;
+  }
+});
+
+// ─── Sanitizers for untrusted data (imports, storage, backups) ─
+const SAFE_ID_RE = /^[A-Za-z0-9_-]{1,64}$/;
+const SAFE_IMAGE_RE = /^data:image\/(png|jpeg|gif|webp);base64,[A-Za-z0-9+/=]+$/;
+const MAX_TEXT = 5000;
+
+function cleanText(v, max = MAX_TEXT) {
+  return typeof v === 'string' ? v.slice(0, max) : '';
+}
+
+function cleanId(v) {
+  const id = String(v ?? '');
+  return SAFE_ID_RE.test(id) ? id : null;
+}
+
+function sanitizeDiaryEntry(e) {
+  if (!e || typeof e !== 'object') return null;
+  const id = cleanId(e.id);
+  if (!id) return null;
+  return {
+    id,
+    date:  cleanText(e.date, 100),
+    learn: cleanText(e.learn),
+    watch: cleanText(e.watch),
+    feel:  cleanText(e.feel, 200),
+    char:  cleanText(e.char, 200),
+    extra: cleanText(e.extra),
+    savedAt: cleanText(e.savedAt, 40)
+  };
+}
+
+function sanitizeProfile(p) {
+  if (!p || typeof p !== 'object') return null;
+  const id = cleanId(p.id);
+  if (!id) return null;
+  return {
+    id,
+    name:   cleanText(p.name, 100),
+    date:   cleanText(p.date, 100),
+    power:  cleanText(p.power, 500),
+    mission: cleanText(p.mission, 500),
+    companion: { name: cleanText(p.companion?.name, 200), description: cleanText(p.companion?.description, 500) },
+    crystal:   { name: cleanText(p.crystal?.name, 200),   power: cleanText(p.crystal?.power, 500) },
+    attack: cleanText(p.attack, 500),
+    phrase: cleanText(p.phrase, 500)
+  };
+}
+
+function sanitizeGalleryItem(g) {
+  if (!g || typeof g !== 'object') return null;
+  const id = cleanId(g.id);
+  if (!id || typeof g.data !== 'string' || !SAFE_IMAGE_RE.test(g.data)) return null;
+  return { id, name: cleanText(g.name, 200), data: g.data };
+}
+
+function sanitizeList(list, fn) {
+  return (Array.isArray(list) ? list : []).map(fn).filter(Boolean);
+}
+
 // ─── Star Field ──────────────────────────────────────────────
 function createStarField() {
   const field = document.getElementById('starField');
@@ -384,7 +456,7 @@ function savedProfileCard(profile) {
           <div class="saved-profile-name">${escapeHtml(profile.name)}</div>
           <div class="saved-profile-date">📅 ${escapeHtml(profile.date)}</div>
         </div>
-        <button class="btn btn-danger" onclick="deleteProfile('${escapeAttr(profile.id)}')">🗑️ Löschen</button>
+        <button class="btn btn-danger" data-action="delete-profile" data-id="${escapeAttr(profile.id)}">🗑️ Löschen</button>
       </div>
       <div class="gen-grid">
         <div class="gen-item">
@@ -633,7 +705,7 @@ function renderJapanese() {
     <div class="category-tabs">
       ${categories.map(c => `
         <button class="category-tab ${c === cat ? 'active' : ''}"
-          onclick="selectJapaneseCategory('${c}')">
+          data-action="select-category" data-category="${escapeAttr(c)}">
           ${categoryEmoji(c)} ${c}
         </button>
       `).join('')}
@@ -712,7 +784,7 @@ function renderQuizQuestion() {
     </div>
     <div class="quiz-options">
       ${options.map(o => `
-        <button class="quiz-option" onclick="checkAnswer(this, '${escapeAttr(o.german)}', '${escapeAttr(card.german)}')">
+        <button class="quiz-option" data-action="check-answer" data-selected="${escapeAttr(o.german)}" data-correct="${escapeAttr(card.german)}">
           ${o.german}
         </button>
       `).join('')}
@@ -878,7 +950,7 @@ function renderGalleryGrid() {
       <img class="gallery-img" src="${escapeAttr(item.data)}" alt="${escapeAttr(item.name)}" loading="lazy">
       <div class="gallery-item-footer">
         <span class="gallery-item-name">${escapeHtml(item.name)}</span>
-        <button class="btn btn-danger" onclick="deleteGalleryItem('${escapeAttr(item.id)}')">🗑️</button>
+        <button class="btn btn-danger" data-action="delete-gallery" data-id="${escapeAttr(item.id)}">🗑️</button>
       </div>
     </div>
   `).join('');
@@ -887,6 +959,11 @@ function renderGalleryGrid() {
 function handleGalleryUpload(input) {
   const file = input.files[0];
   if (!file) return;
+  if (!/^image\/(png|jpeg|gif|webp)$/.test(file.type)) {
+    alert('Bitte wähle ein PNG-, JPG-, GIF- oder WebP-Bild. 🎨');
+    input.value = '';
+    return;
+  }
 
   const reader = new FileReader();
   reader.onload = e => {
@@ -1003,7 +1080,7 @@ function renderDiaryEntries() {
     <div class="diary-entry">
       <div class="diary-entry-header">
         <span class="diary-entry-date">📅 ${escapeHtml(entry.date)}</span>
-        <button class="btn btn-danger" onclick="deleteDiaryEntry('${escapeAttr(entry.id)}')">🗑️ Löschen</button>
+        <button class="btn btn-danger" data-action="delete-diary" data-id="${escapeAttr(entry.id)}">🗑️ Löschen</button>
       </div>
       <div class="diary-entry-body">
         ${entry.learn    ? `<div class="diary-entry-field"><strong>🌟 Gelernt:</strong>${escapeHtml(entry.learn)}</div>` : ''}
@@ -1088,6 +1165,11 @@ function triggerImportData() {
 function importData(file) {
   if (!file) return;
   const input = document.getElementById('backupFileInput');
+  if (file.size > 20 * 1024 * 1024) {
+    alert('Diese Datei ist zu groß. Es wurde nichts verändert. 🌙');
+    if (input) input.value = '';
+    return;
+  }
   const ok = confirm('Diese Datei wird mit den vorhandenen Daten zusammengeführt. Doppelte IDs werden übersprungen. Fortfahren?');
   if (!ok) {
     if (input) input.value = '';
@@ -1099,7 +1181,9 @@ function importData(file) {
     try {
       const bundle = JSON.parse(e.target.result);
       const importBundle = normalizeImportBundle(bundle);
-      const { profiles, diary, gallery } = importBundle;
+      const profiles = sanitizeList(importBundle.profiles, sanitizeProfile);
+      const diary    = sanitizeList(importBundle.diary, sanitizeDiaryEntry);
+      const gallery  = sanitizeList(importBundle.gallery, sanitizeGalleryItem);
 
       const oldProfiles = STATE.profiles;
       const oldDiary = STATE.diary;
@@ -1223,7 +1307,7 @@ function recoverFromAutoBackup() {
       const ok = confirm('Die Auto-Sicherung von ' + new Date(result.timestamp).toLocaleString('de-DE') + ' wiederherstellen?');
       if (!ok) return;
       
-      STATE.diary = Array.isArray(result.data) ? result.data : [];
+      STATE.diary = sanitizeList(result.data, sanitizeDiaryEntry);
       saveDiaryToStorage();
       renderDiaryEntries();
       alert('Einträge aus Auto-Sicherung wiederhergestellt! 🌙');
@@ -1419,7 +1503,7 @@ function checkBirthdaySurprise() {
 function loadDiary() {
   try {
     const diary = JSON.parse(localStorage.getItem('stellara_diary') || '[]');
-    return Array.isArray(diary) ? diary : [];
+    return sanitizeList(diary, sanitizeDiaryEntry);
   } catch { return []; }
 }
 
@@ -1440,7 +1524,7 @@ function saveDiaryToStorage() {
 function loadGallery() {
   try {
     const gallery = JSON.parse(localStorage.getItem('stellara_gallery') || '[]');
-    return Array.isArray(gallery) ? gallery : [];
+    return sanitizeList(gallery, sanitizeGalleryItem);
   } catch { return []; }
 }
 
@@ -1457,7 +1541,7 @@ function saveGalleryToStorage() {
 function loadProfiles() {
   try {
     const profiles = JSON.parse(localStorage.getItem('stellara_profiles') || '[]');
-    return Array.isArray(profiles) ? profiles : [];
+    return sanitizeList(profiles, sanitizeProfile);
   } catch { return []; }
 }
 
